@@ -1,4 +1,3 @@
-
 # VALANS – Landing Page
 
 Landing page conceptual for **VALANS urban electric mobility**, designed and developed as a UX/UI technical exercise.
@@ -168,3 +167,4 @@ https://github.com/marinaescriva
 ## Notes
 
 This project was created as a **UX/UI technical exercise** exploring the workflow from design to development and deployment.
+>>>>>>> 19954fd13d05b2a1f67edaef3292879a01bf63ce
