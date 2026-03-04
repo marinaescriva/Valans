@@ -6,7 +6,7 @@
 
 /* ===== DESIGN TOKENS ===== */
 :root {
-  --accent:           #e0f92f;
+  --accent:           #e0f92f;  /*color acento comprobado correcto*/
   --dark:             #353e44;
   --text-primary:     #2d2d31;
   --text-secondary:   #353e44;
@@ -332,69 +332,61 @@ body {
 .shadow-el.sm         { width: 20%; height: 6px; }
 
 
-/* ============================================================
-   GALLERY / CAROUSEL
-   ============================================================ */
+
+
+/* ==========================================================
+   GALLERY
+   ========================================================== */
+
 #gallery {
   background: var(--dark);
   padding: 64px 16px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 400px;
 }
 
-.carousel-container {
+.gallery-container {
   width: 100%;
   max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
-.carousel-track-wrap {
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.carousel-track {
-  display: flex;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.carousel-slide {
-  flex-shrink: 0;
-  height: 275px;
-  border-radius: 4px;
+.gallery-item {
   overflow: hidden;
+  border-radius: 4px;
 }
-.carousel-slide img {
+
+.gallery-item img {
   width: 100%;
-  height: 100%;
+  height: 275px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.35s ease;
 }
-.carousel-slide:hover img { transform: scale(1.04); }
 
-/* Progress bar / scrubber */
-.carousel-progress {
-  position: relative;
-  background: var(--bg-secondary);
-  border-radius: var(--radius-xl);
-  height: 26px;
-  overflow: hidden;
-  cursor: pointer;
+.gallery-item:hover img {
+  transform: scale(1.04);
 }
-.carousel-thumb {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background: var(--accent);
-  border-radius: var(--radius-xl);
-  transition: width 0.4s ease, left 0.4s ease;
+
+/* =====================
+   MOBILE
+   ===================== */
+
+@media (max-width: 768px) {
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    height: auto;
+  }
+
 }
 
 
